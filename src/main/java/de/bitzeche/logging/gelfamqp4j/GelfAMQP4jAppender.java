@@ -130,7 +130,7 @@ public class GelfAMQP4jAppender extends AppenderSkeleton implements
 		if (connection == null || !connection.isOpen()) {
 			connection = factory.newConnection();
 			channel = connection.createChannel();
-			channel.exchangeDeclare(amqpExchangeName, "topic", false);
+			channel.exchangeDeclare(amqpExchangeName, "topic", true);
 			channel.confirmSelect();
 		}
 	}
